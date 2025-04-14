@@ -1,107 +1,205 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forecasy</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
-            color: #222;
-        }
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 1rem;
-            position: relative;
-        }
-        .header img {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100px;
-            height: auto;
-        }
-        .header-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin: 0 auto;
-        }
-        .highlight-section {
-            width: 100%;
-            background: linear-gradient(90deg, #a855f7, #7c3aed);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: left;
-            gap: 3rem;
-            flex-wrap: wrap;
-            padding-bottom: 1rem;
-        }
-        .highlight-section img {
-            width: 200px;
-            height: auto;
-        }
-        .highlight-text {
-            font-size: 1.6rem;
-            font-weight: 500;
-            max-width: 400px;
-        }
-        section {
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-        footer {
-            background-color: #f0f0f0;
-            padding: 2rem;
-            text-align: center;
-            font-size: 1rem;
-        }
-        @media (max-width: 600px) {
-            .header {
-                flex-direction: column;
-                padding-top: 3rem;
-            }
-            .header img {
-                position: static;
-                transform: none;
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forecasy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfdfd;
+      color: #1f1f1f;
+      line-height: 1.6;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: white;
+      position: relative;
+      border-bottom: 1px solid #eee;
+    }
+
+    .header img {
+      position: absolute;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80px;
+      height: auto;
+    }
+
+    .header-title {
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: #4b0082;
+      text-align: center;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: auto;
+      opacity: 0.8;
+    }
+
+    .highlight-section {
+      background: linear-gradient(90deg, #8e2de2, #4a00e0);
+      color: white;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .highlight-section img {
+      width: 180px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .highlight-text {
+      font-size: 1.6rem;
+      font-weight: 600;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+
+    section {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 2.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 2rem auto;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    ul li {
+      margin-bottom: 1.2rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '✨';
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    footer {
+      background-color: #f7f7f7;
+      padding: 2rem;
+      text-align: center;
+      font-size: 1rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    a {
+      color: #7c3aed;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        padding-top: 3rem;
+        text-align: center;
+      }
+
+      .header img {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+      }
+
+      .highlight-section {
+        text-align: center;
+      }
+
+      .highlight-text {
+        font-size: 1.3rem;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="header">
-        <img src="assets/logo.png" alt="Forecasy Logo" />
-        <div class="header-title">Forecast your life</div>
+  <div class="header">
+    <img src="assets/logo.png" alt="Forecasy Logo" />
+    <div class="header-title">Forecast your life</div>
+  </div>
+
+  <div class="hero">
+    <p>Welcome to Forecasy — your intelligent companion for predicting and reflecting on life’s journey.</p>
+  </div>
+
+  <div class="highlight-section">
+    <img src="assets/inverted_diary.png" alt="Inverted Diary Logo" />
+    <div class="highlight-text">
+      Write what happened yesterday.  
+      <br />
+      Know what may happen tomorrow.
     </div>
+  </div>
 
-    <div class="highlight-section">
-        <img src="assets/inverted_diary.png" alt="Inverted Diary Logo" />
-        <div class="highlight-text">
-            Write what happened yesterday.  
-            Know what may happen tomorrow.
-        </div>
-    </div>
+  <section>
+    <h2>Why Forecasy Diary?</h2>
+    <p><strong>Forecasy Diary</strong> is not just a place to write what happened — it’s a smart companion that helps you uncover what may come next.</p>
 
-    <section>
-        <p>Welcome to Forecasy — your intelligent companion for predicting and reflecting on life’s journey.</p>
-    </section>
+    <p>Reflect on your thoughts. Get insights. See what patterns shape your days — and where they may lead.</p>
 
-    <footer>
-        Contact us: <a href="mailto:forecasy@gmail.com">forecasy@gmail.com</a>
-    </footer>
+    <h3>What makes it magical?</h3>
+    <ul>
+      <li><strong>AI-powered life forecasting:</strong> Your entries are more than words. Our model detects emotional patterns and gives you gentle predictions for upcoming days.</li>
+      <li><strong>Smart journaling assistant:</strong> Track your energy, mood, and clarity over time. It’s like having your wiser future self leave you tips each morning.</li>
+      <li><strong>Private and secure:</strong> Your writing is always yours - safely encrypted, and never shared without your permission.</li>
+      <li><strong>Built for thoughtful minds:</strong> Perfect for anyone who wants to live with more intention and reflection.</li>
+    </ul>
+
+    <p><strong>Write your story. Forecast your life.</strong></p>
+  </section>
+
+  <footer>
+    Contact us: <a href="mailto:forecasy@gmail.com">forecasy@gmail.com</a>
+  </footer>
 
 </body>
 </html>
